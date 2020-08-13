@@ -4,20 +4,39 @@
 'use strict';
 // makes JS "less loose"
 
+const mongoose = require('mongoose');
+
+
+// declaring name (notesy) will create a database if it doesn't already exist.
+mongoose.connect('mongodb://localhost:27017/notesy', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+
 const Input = require('./lib/input.js');
 // This communicates that you want require to look in this file path for the input library file.
-
-// console.log('Input', Input);
-
 const Notes = require('./lib/notes.js');
-// Requires to look in the filepath for the notes library file.
-
-// console.log('notes', Notes);
+// Requires to look in the filepath for the notes library file
 
 
 // const options = 
 const input = new Input();
-const note = new Notes(input);
-// // creates new object from the Input constructor function
+const notes = new Notes();
 
-console.log(note);
+
+
+// // creates new object from the Input constructor function
+// if input is valid, execute command, disconnect from mongoose, else exit out with help function.
+if (input.valid()) {
+  notes.execute(input.command)
+    .then(mongoose.disconnect)
+    .catch(error => console.error(error));
+} else {
+  help();
+}
+
+
+function help() {
+  console.log('Error!');
+  process.exit();
+}

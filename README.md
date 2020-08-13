@@ -16,8 +16,9 @@ MONGODB_URI - URL to the running mongo instance/db
 e.g. npm start
 ### How to use your library (where applicable)
 ### Tests
-How do you run tests?
+How do you run tests? npm test
 Any tests of note?
-Describe any tests that you did not complete, skipped, etc
+Describe any tests that you did not complete, skipped, etc 
+I could not get 2 of the parse tests to pass.
 ### UML
 Link to an image of the UML for your application and response to events
