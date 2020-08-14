@@ -1,5 +1,5 @@
 {
-  "name": "notesy",
+  "name": "@daisyjjohnson/notesy",
   "version": "1.0.0",
   "description": "Created by: Daisy Johnson",
   "main": "index.js",
@@ -10,12 +10,13 @@
     "express": "^4.17.1",
     "is-url": "^1.2.4",
     "minimist": "^1.2.5",
-    "mongoose": "^5.8.11",
+    "mongoose": "^5.9.29",
+    "my-package": "0.0.0",
     "superagent": "^5.2.1",
     "uuid": "^3.4.0"
   },
   "devDependencies": {
-    "@code-fellows/supergoose": "^1.0.1",
+    "@code-fellows/supergoose": "^1.0.2",
     "faker": "^4.1.0",
     "jest": "^26.4.0"
   },

@@ -13,7 +13,7 @@ minimist.mockImplementation(() => {
 
 const Input = require('../lib/input.js');
 
-describe('Parse add', () => {
+describe.skip('Parse add', () => {
 
   it('should parse --add with payload', () => {
     const input = new Input();
@@ -36,7 +36,7 @@ describe('Parse add', () => {
 
 });
 
-describe('Parse list', () => {
+describe.skip('Parse list', () => {
   it('should parse --list', () => {
     const input = new Input();
     const command = input.parse({ list: true });
@@ -50,7 +50,7 @@ describe('Parse list', () => {
   });
 });
 
-describe(' parse category', () => {
+describe.skip(' parse category', () => {
   it('should parse -a with payload and --category', () => {
     const input = new Input();
     const command = input.parse({ a: 'good payload', category: 'good category' });
@@ -79,7 +79,7 @@ describe(' parse category', () => {
   });
 });
 
-describe('Parse delete', () => {
+describe.skip('Parse delete', () => {
   it('should parse --delete', () => {
     const input = new Input();
     const command = input.parse({ delete: 'someid' });
@@ -95,7 +95,7 @@ describe('Parse delete', () => {
   });
 });
 
-describe('Validate', () => {
+describe.skip('Validate', () => {
 
   it('valid() respects a proper object', () => {
     let options = new Input();
@@ -110,7 +110,7 @@ describe('Validate', () => {
 
 });
 
-describe('category', () => {
+describe.skip('category', () => {
   it('should parse category with full switch', () => {
     let options = new Input();
     const actual = options.parse({ add: 'buy milk', category: 'groceries' });

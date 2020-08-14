@@ -26,16 +26,17 @@ const notes = new Notes();
 
 
 // // creates new object from the Input constructor function
-// if input is valid, execute command, disconnect from mongoose, else exit out with help function.
+// if input is valid, execute command and then disconnect from mongoose. 
 if (input.valid()) {
   notes.execute(input.command)
     .then(mongoose.disconnect)
     .catch(error => console.error(error));
+// else exit out with help function.    
 } else {
   help();
 }
 
-
+// Help functions puts up a console error and exits out.
 function help() {
   console.log('Error!');
   process.exit();
